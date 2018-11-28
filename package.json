@@ -1,0 +1,28 @@
+{
+  "name": "autism-parents-connect",
+  "version": "1.0.0",
+  "engines": {
+    "node": "10.11.0"
+  },
+  "description": "A place for parents with special needs children to connect and share knoweldge",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anithaprince/autism-parents-connect.git"
+  },
+  "author": "Anitha Varghese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anithaprince/autism-parents-connect/issues"
+  },
+  "homepage": "https://github.com/anithaprince/autism-parents-connect#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.14"
+  }
+}
