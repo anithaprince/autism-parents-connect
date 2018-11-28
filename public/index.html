@@ -15,11 +15,7 @@
 </head>
 
 <body ng-controller="AutismCtrl as ctrl">
-  <!-- Logo section -->
-  <div class="row">
-    <a href="index.html"><img src="images/logo.png" alt="logo" style="border:none; margin-top:25px" /></a>
-  </div>
-
+  <header ng-include="'partials/logo.html'"></header>
   <!-- page wrap -->
   <div class="row page_wrap" style="margin-top:-2px">
      <div class="twelve columns">
@@ -75,15 +71,8 @@
         </div>
 
       </div><!-- end services -->
-
-      <div class="row footer">
-        <div class="twelve columns">
-          <ul id="menu3" class="footer_menu horizontal">
-            <li class=""><a href="index.html">Home</a></li>
-            <li class="">Copyright ©2018 Autism Parents Connect. Site by Anitha Varghese</li>
-          </ul>
-      </div>
-      </div>
+      <!-- Footer section -->
+      <div class="row footer" ng-include="'partials/footer.html'"></div>
 
 		  <script type="text/javascript">
         $('ul#menu3').nav-bar();
