@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="twelve columns">
+  <div class="blog_post"><!-- Begin Blog Post -->
+    <div class="heading_dots_grey  hide-for-smal">
+      <h1 class="heading_supersize" style="margin-bottom:0">
+        <span class="heading_bg"> Create a New Post </span>
+      </h1>
+    </div>
+  </div>
+  </div>
+</div>
+<form style="padding:1%;" ng-submit="ctrl.createBlog()">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x">
+
+      <div class="medium-6 cell">
+        <label>Your Name
+          <input type="text" ng-model="ctrl.posted_by" placeholder="Enter your name here" default="Anonymous">
+        </label>
+      </div>
+
+      <div class="medium-6 cell">
+        <label>Title
+          <input type="text" ng-model="ctrl.heading" placeholder="Type title here" required>
+        </label>
+      </div>
+
+      <div class="medium-6 cell">
+        <label>Image
+          <input type="text" ng-model="ctrl.image" placeholder="Add Image Path">
+        </label>
+      </div>
+
+      <div class="medium-6 cell">
+       <label>
+         Write Post
+         <textarea ng-model="ctrl.post_body" placeholder="Type here" rows="20" required></textarea>
+       </label>
+      </div>
+      <input class="button medium round primary" type="submit" value="Create Post">
+      <a ng-click="ctrl.changeInclude('blog')" class="button medium round secondary">Cancel</a>
+    </div>
+  </div>
+</form>

@@ -1,15 +1,25 @@
-<!-- posts -->
 <div class="seven columns">
-  <div class="blog_post"><!-- Begin Blog Post -->
+  <!-- Write Post Section -->
+  <div class="blog_post" style="background-color: #f5f6f7;border: 1px solid #dddfe2;border-radius: 2px 2px 0 0;"><!-- Begin Blog Post -->
     <div class="heading_dots_grey">
-      <h3><span class="heading_bg">Lorem Ipsum</span></h3>
+      <h3><span class="heading_bg" style="background-color: #f5f6f7;">Whats New?</span></h3>
     </div>
-    <img src="images/question.png" alt="desc" style="width:10%" />
-    <p><em>20th oct 2012 | Posted by: <a href="#">Admin</a> | <a href="#">5 Comments</a></em></p>
+    <img src="images/new.png" alt="desc" style="width:10%; float: left;" /><p><a ng-click="ctrl.changeInclude('blog_new')" class="button large round">Write Post</a> </p>
+    <p>Have a question or something interesting to share? Connect with your network.
+  </div><!-- End Write Post Section -->
 
-    <p>Sed vitae nisi leo. Nulla tincidunt, turpis non gravida pharetra, diam sapien posuere massa, non luctus leo mauris at sapien. Donec ut fermentum eros. Vestibulum placerat dui sit amet quam.
-      <a ng-click="ctrl.changeInclude('blog_single')">Continue Reading &raquo;</a></p>
+  <div ng-repeat="blog in ctrl.blogs"><!-- Begin Blog Post -->
+    <div class="blog_post">
+      <div class="heading_dots_grey">
+        <h3><span class="heading_bg" style="line-height: normal;">{{ blog.heading }}</span></h3>
+      </div>
+      <img src="{{ blog.image }}" alt="desc" style="width:10%" />
+      <p><em>{{ blog.date | date:'MM/dd/yyyy @ h:mm:ssa' }} | Posted by: <a href="#">{{ blog.posted_by }}</a> | <a href="#">{{blog.comments.length}} Comments</a></em></p>
+      <p>{{ blog.post_body| limitTo: 200  }}
+        <a ng-click="ctrl.getBlog(blog)" >Continue Reading &raquo;</a></p>
+    </div>
   </div><!-- END blog post -->
+
 </div><!-- END row posts -->
 
 <!-- Sidebar -->

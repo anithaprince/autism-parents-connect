@@ -238,3 +238,9 @@ ul.flyout li a:hover, .nav-bar li ul li a:hover { background: #f34c31; color: #f
       background: #FE563B;
 
 }
+
+/* in the css file or in a style block */
+.angular-with-newlines {
+    white-space: pre-wrap;
+    padding: 5%;
+}

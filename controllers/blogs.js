@@ -13,8 +13,8 @@ const Blogs = require('../models/blogs.js');
 // =======================================
 /************* Index Route***********************/
 router.get('/', (req, res)=>{
-  Blogs.find({}, (err, foundBlog)=>{
-    res.json(foundBlog);
+  Blogs.find({}, (err, foundBlogs)=>{
+    res.json(foundBlogs);
   });
 });
 //curl http://localhost:3000/blogs
@@ -46,4 +46,12 @@ router.put('/:id', (req, res)=>{
 });
 
 //curl -X PUT -H "Content-Type: application/json" -d '{"comments":"Nice , great work"}' http://localhost:3000/blogs/5bff59c3eff02d1412a699a8
+
+/************* Show Route ********************/
+
+router.get('/:id',(req,res)=>{
+  Blogs.findById(req.params.id, (err, foundBlog)=>{
+    res.json(foundBlog);
+  })
+})
 module.exports = router;
