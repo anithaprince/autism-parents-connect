@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" ng-app="AutismApp">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Autism Parents Connect by Anitha</title>
+  <!-- Included CSS Files  -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <!-- Included JS Files  -->
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+  <script src="javascripts/app.js" charset="utf-8"></script>
+</head>
+
+<body ng-controller="AutismCtrl as ctrl">
+  <header ng-include="'partials/logo.html'"></header>
+  <div class="row page_wrap" style="margin-top:-2px">
+    <div class="twelve columns">
+      <!-- navigation -->
+      <div class="row" ng-include="'partials/navigation.html'"></div>
+      <!-- END navigation -->
+      <!-- ********************************************************************* -->
+      <div class="row">
+        <div ng-include="ctrl.includePath"></div>
+      </div>
+
+      <!-- ********************************************************************* -->
+      <div class="row footer" ng-include="'partials/footer.html'"> </div>
+
+    </div>
+  </div>
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js" type="text/javascript"></script>
+  <script src="javascripts/app1.js" type="text/javascript"></script>
+</body>
+</html>

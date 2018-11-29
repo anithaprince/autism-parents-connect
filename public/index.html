@@ -18,9 +18,35 @@
   <header ng-include="'partials/logo.html'"></header>
   <!-- page wrap -->
   <div class="row page_wrap" style="margin-top:-2px">
-     <div class="twelve columns">
+    <div class="twelve columns">
       <!-- navigation -->
-      <nav ng-include="'partials/navigation.html'"></nav>
+      <div class="row">
+        <div class="twelve columns header_nav" style="margin-bottom:0; box-shadow: none">
+          <div class="twelve columns">
+            <ul id="menu-header" class="nav-bar horizontal">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blog.html">Connect</a></li>
+              <li class="has-flyout">
+                <a href="#">Shop</a><a href="#" class="flyout-toggle"></a>
+                <ul class="flyout">
+                  <li class="has-flyout"><a href="products-page.html">Calming Toys & Products</a></li>
+                  <li class="has-flyout"><a href="products-page.html">Chewables - Oral Motor</a></li>
+                  <li class="has-flyout"><a href="products-page.html">Sleep Aids</a></li>
+                  <li class="has-flyout"><a href="products-page.html">Educational Toys </a></li>
+                   <!-- <li class="has-flyout"><a href="blog.html">Blog</a></li>
+                   <li class="has-flyout"><a href="blog_single.html">Blog Single Page</a></li>
+                   <li class="has-flyout"><a href="product-single.html">Product Single</a></li> -->
+                 </ul>
+              </li>
+              <li class=""><a href="galleries.html">View Events Gallery</a></li>
+              <li class=""><a href="contact.html">Contact Page</a></li>
+            </ul>
+           <script type="text/javascript">
+             $('ul#menu-header').nav-bar();
+           </script>
+          </div>
+        </div>
+      </div><!-- END navigation -->
       <!-- Slider -->
       <div class="show-for-large-up">
         <div class="row">
@@ -69,21 +95,14 @@
            <p><em>We conduct autism-friendly activities and events by partnering with more than 30 support groups across TriState Area</em></p>
            <p style="text-align:center"><a href="#" class="button large round">View Event Gallery</a> </p>
         </div>
-
       </div><!-- end services -->
+
       <!-- Footer section -->
       <div class="row footer" ng-include="'partials/footer.html'"></div>
-
-		  <script type="text/javascript">
-        $('ul#menu3').nav-bar();
-      </script>
-
-      </div>
-
-    </div><!-- end page wrap) -->
-    <!-- Included JS Files (Compressed) -->
-    <script src="javascripts/foundation.min.js" type="text/javascript"></script> <!-- Initialize JS Plugins -->
-    <script src="javascripts/app1.js" type="text/javascript"></script>
-
+    </div>
+  </div><!-- end page wrap) -->
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js" type="text/javascript"></script> <!-- Initialize JS Plugins -->
+  <script src="javascripts/app1.js" type="text/javascript"></script>
 </body>
 </html>
