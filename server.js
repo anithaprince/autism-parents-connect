@@ -34,6 +34,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
 // =======================================
+//            CONTROLLERS
+// =======================================
+
+const blogsController = require('./controllers/blogs.js');
+app.use('/blogs', blogsController);
+
+// =======================================
 //              STATIC
 // =======================================
 app.use(express.static('public'));
