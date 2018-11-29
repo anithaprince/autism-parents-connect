@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
-const bookmarkSchema = new mongoose.Schema({
-  heading: String,
-  image:,
-  date:,
-  Posted_by:,
-  comments:,
-  post_body:
-  url: String,
+const blogSchema = new mongoose.Schema({
+  heading: {type: String, required: true},
+  image:{type: String, default: 'images/question.png'},
+  date:{type: Date, default: Date.now},
+  posted_by:{type: String, default: 'Anonymous'},
+  post_body:{type: String},
+  comments:[{type: String}],
 });
 
-const Bookmarks = mongoose.model('Bookmark', bookmarkSchema);
-module.exports = Bookmarks;
+const Blogs = mongoose.model('Blog', blogSchema);
+module.exports = Blogs;
