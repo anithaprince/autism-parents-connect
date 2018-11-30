@@ -100,6 +100,15 @@ app.controller('AutismCtrl', ['$http', function($http){
     }).catch(angular.noop);
   }
 
+  this.deleteBlog = function(blog){
+    $http({
+      method:'DELETE',
+      url:'/blogs/'+ blog._id
+    }).then(function(response){
+      controller.getBlogs();
+    })
+  }
+
 this.getBlogs();
 this.getEvents();
 
