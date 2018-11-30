@@ -25,6 +25,17 @@ app.controller('AutismCtrl', ['$http', function($http){
         })
     };
 
+    this.getEvents = function(){
+      $http({
+        method:'GET',
+        url: '/events'
+      }).then(function(response){
+      //  console.log(response.data);
+        controller.events = response.data
+      }, error=>{
+              console.log(error);
+          })
+      };
   /*********    Create route      ********/
   this.createBlog = function(){
     if(this.posted_by==''){
@@ -90,5 +101,6 @@ app.controller('AutismCtrl', ['$http', function($http){
   }
 
 this.getBlogs();
+this.getEvents();
 
 }]);

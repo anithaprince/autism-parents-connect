@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" ng-app="AutismApp">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Autism Parents Connect by Anitha</title>
+  <!-- Included CSS Files  -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/main.css">
+  <link rel="stylesheet" href="stylesheets/app.css">
+  <!-- Included JS Files  -->
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+  <script src="javascripts/app.js" charset="utf-8"></script>
+</head>
+
+<body ng-controller="AutismCtrl as ctrl">
+  <header ng-include="'partials/logo.html'"></header>
+    <div class="row page_wrap" style="margin-top:-2px">
+      <div class="twelve columns">
+        <!-- navigation -->
+        <div class="row" ng-include="'partials/navigation.html'"></div>
+        <!-- END navigation -->
+        <!-- ********************************************************************* -->
+  		  <div id="container" ng-repeat="event in ctrl.events">
+    			<!-- photo -->
+    			<div class='box photo col2'>
+    				<a href="#"><img src='{{ event.image }}' id="myImg{{ event._id }}"/></a>
+              <h4 style="text-align:center"><strong>{{ event.title }}</strong></h4>
+              <p>{{ event.details }}</p>
+              <!-- The Modal https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img-->
+                <div id="myModal{{ event._id }}" class="modal">
+                  <span class="close">&times;</span>
+                  <img class="modal-content" id="img{{ event._id }}">
+                  <div id="caption{{ event._id }}"></div>
+                </div>
+
+                <script>
+                    var modal = document.getElementById('myModal{{ event._id }}');
+                    var img = document.getElementById('myImg{{ event._id }}');
+                    var modalImg = document.getElementById("img{{ event._id }}");
+                    img.onclick = function(){
+                      console.console.log(this.src);
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                    }
+                    var span = document.getElementsByClassName("close{{ event._id }}")[0];
+                    span.onclick = function() {
+                        modal.style.display = "none";
+                    }
+                </script>
+    			</div>
+
+  		   </div> <!-- end Masonry container -->
+
+  		  <div class="row footer" ng-include="'partials/footer.html'"> </div>
+			</div>
+		</div>
+		<!-- end page wrap) -->
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js" type="text/javascript"></script>
+  <script src="javascripts/app1.js" type="text/javascript"></script>
+	<script src="javascripts/masonry.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+    $(function(){
+      var $container = $('#container');
+      $container.imagesLoaded( function(){
+        $container.masonry({
+          itemSelector : '.box',
+            isFitWidth: true,
+            isAnimated: true
+        });
+      });
+    });
+  </script>
+  <style>
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    }
+
+    /* Modal Content (image) */
+    .modal-content {
+        margin: auto;
+        display: block;
+        width: 100%;
+        max-width: 1000px;
+    }
+
+    /* Add Animation */
+    .modal-content, #caption {
+        -webkit-animation-name: zoom;
+        -webkit-animation-duration: 0.6s;
+        animation-name: zoom;
+        animation-duration: 0.6s;
+    }
+
+    @-webkit-keyframes zoom {
+        from {-webkit-transform:scale(0)}
+        to {-webkit-transform:scale(1)}
+    }
+
+    @keyframes zoom {
+        from {transform:scale(0)}
+        to {transform:scale(1)}
+    }
+
+    /* The Close Button */
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    /* 100% Image Width on Smaller Screens */
+    @media only screen and (max-width: 700px){
+        .modal-content {
+            width: 100%;
+        }
+    }
+
+    .col2 img {
+        max-width: 500px;
+    }
+  </style>
+
+
+</body>
+</html>

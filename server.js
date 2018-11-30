@@ -39,6 +39,8 @@ app.use(express.urlencoded({extended:false}));
 
 const blogsController = require('./controllers/blogs.js');
 app.use('/blogs', blogsController);
+const eventsController = require('./controllers/events.js');
+app.use('/events', eventsController);
 
 // =======================================
 //              STATIC
