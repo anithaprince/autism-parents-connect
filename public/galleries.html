@@ -49,9 +49,9 @@
   		  <div id="container" ng-repeat="event in ctrl.events">
     			<!-- photo -->
     			<div class='box photo col2'>
-    				<a href="#"><img src='{{ event.image }}' id="myImg{{ event._id }}"/></a>
-              <h4 style="text-align:center"><strong>{{ event.title }}</strong></h4>
-              <p>{{ event.details }}</p>
+    				<a href="#"><img src='{{ event.event_image }}' id="myImg{{ event._id }}"/></a>
+              <h4 style="text-align:center"><strong>{{ event.event_title }}</strong></h4>
+              <p>{{ event.event_details }}</p>
               <!-- The Modal https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_modal_img-->
                 <div id="myModal{{ event._id }}" class="modal">
                   <span class="close">&times;</span>
