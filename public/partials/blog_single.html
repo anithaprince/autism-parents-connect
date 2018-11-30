@@ -1,4 +1,16 @@
 <div class="row">
+  <div class="columns">
+    <nav aria-label="You are here:" role="navigation">
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Home</a></li>
+        <li><a ng-click="ctrl.changeInclude('blog')">GO BACK</a></li>
+        <li>
+          <span class="show-for-sr">Current: </span> {{ctrl.blog.heading}}
+        </li>
+      </ul>
+    </nav>
+  </div>
+
   <div class="twelve columns">
   <div class="blog_post"><!-- Begin Blog Post -->
         <div class="heading_dots_grey  hide-for-smal"><h2 style="margin-bottom:2%; line-height:normal;"><span class="heading_bg"> {{ctrl.blog.heading}}</span></h2></div>
