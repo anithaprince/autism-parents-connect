@@ -15,7 +15,7 @@ const Blogs = require('../models/blogs.js');
 router.get('/', (req, res)=>{
   Blogs.find({}, (err, foundBlogs)=>{
     res.json(foundBlogs);
-  }).sort('date', -1)
+  }).sort({'date': -1})
 });
 //curl http://localhost:3000/blogs
 
