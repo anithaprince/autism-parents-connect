@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const EventSchema = new mongoose.Schema({
-  title: {type: String, required: true},
-  image:{type: String, required: true},
-  details:{type: String},
+  event_title: {type: String, required: true},
+  event_image:{type: String, required: true},
+  event_details:{type: String},
 });
 
 const Events = mongoose.model('Event', EventSchema);

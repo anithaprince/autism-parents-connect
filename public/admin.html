@@ -6,6 +6,7 @@
   <title>Autism Parents Connect by Anitha</title>
   <!-- Included CSS Files  -->
   <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/font-awesome.min.css">
   <link rel="stylesheet" href="stylesheets/main.css">
   <link rel="stylesheet" href="stylesheets/app.css">
   <!-- Included JS Files  -->
@@ -16,10 +17,33 @@
 
 <body ng-controller="AutismCtrl as ctrl">
   <header ng-include="'partials/logo.html'"></header>
-  <div class="row page_wrap" style="margin-top:-2px">
+  <div class="row page_wrap" style="margin-top:-2px; padding:1%;">
     <div class="twelve columns">
       <!-- navigation -->
-      <div class="row" ng-include="'partials/navigation.html'"></div>
+      <div class="row">
+        <div class="twelve columns header_nav" style="margin-bottom:0; box-shadow: none">
+          <div class="twelve columns">
+            <ul id="menu-header" class="nav-bar horizontal">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="blog.html">Connect</a></li>
+              <li class="has-flyout">
+                <a href="#">Shop</a><a href="#" class="flyout-toggle"></a>
+                <ul class="flyout">
+                  <li class="has-flyout"><a href="products-page.html">Calming Toys & Products</a></li>
+                  <li class="has-flyout"><a href="products-page.html">Chewables - Oral Motor</a></li>
+                  <li class="has-flyout"><a href="products-page.html">Sleep Aids</a></li>
+                  <li class="has-flyout"><a href="products-page.html">Educational Toys </a></li>
+                </ul>
+              </li>
+              <li ><a href="galleries.html">View Events Gallery</a></li>
+              <li ><a href="contact.html">Contact Page</a></li>
+            </ul>
+           <script type="text/javascript">
+             $('ul#menu-header').nav-bar();
+           </script>
+          </div>
+        </div>
+      </div><!-- END navigation -->
       <!-- END navigation -->
       <!-- ****************************BLOG SECTION***************************************** -->
       <div class="row">
@@ -40,7 +64,7 @@
               <td>{{ blog._id}}</td>
               <td>{{ blog.heading }}</td>
               <td>{{ blog.posted_by }}</td>
-              <td><button ng-click="ctrl.deleteBlog(blog)" class="button">X</button></td>
+              <td style="text-align:center;"><button ng-click="ctrl.deleteBlog(blog)" class="button"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
             </tr>
           </tbody>
         </table>
@@ -54,13 +78,13 @@
         <div class="heading_dots hide-for-small" style="margin-bottom:0px">
           <h1 class="heading_supersize"><span class="heading_center_bg">Events SECTION</span></h1>
         </div>
-        <table>
-          <h1>Events</h1>
+        <table style="margin:auto !important; width:100%;">
+          <h1 style="text-align: center;">Events</h1>
           <thead>
             <tr>
-              <th width="200">ID</th>
+              <th width="150">ID</th>
               <th>Event Title</th>
-              <th width="150">Image</th>
+              <th width="200">Image</th>
               <th width="150">Delete</th>
             </tr>
           </thead>
@@ -69,7 +93,7 @@
               <td>{{ event._id}}</td>
               <td>{{ event.title }}</td>
               <td>{{ event.image }}</td>
-              <td><button ng-click="ctrl.deleteEvent(event)" class="button">X</button></td>
+              <td style="text-align:center;"><button ng-click="ctrl.deleteEvent(event)" class="button"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button></td>
             </tr>
           </tbody>
         </table>
@@ -77,7 +101,42 @@
       </div>
 
       <!-- **********************************ADD NEW EVENT********************************** -->
+    <div class="row">
+      <form style="padding:1%;" ng-submit="ctrl.createEvent()" id="myForm">
+        <h1 style="text-align: center;">Add New Event</h1>
+        <div class="grid-container">
+          <div class="grid-x grid-padding-x">
 
+            <div class="medium-6 cell">
+              <label>Event Title
+                <input type="text" ng-model="ctrl.event_title" placeholder="Enter event title here">
+              </label>
+            </div>
+
+            <div class="medium-6 cell">
+              <label>Image Address
+                <input type="text" ng-model="ctrl.event_image" placeholder="Add Image Path">
+              </label>
+            </div>
+
+            <div class="medium-6 cell">
+             <label>
+               Event Details
+               <textarea ng-model="ctrl.event_details" placeholder="Type here" rows="5" required></textarea>
+             </label>
+            </div>
+
+            <input class="button medium round primary" type="submit" value="Add Event">
+            <a onclick="myFunction()" class="button medium round secondary">Clear Form</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      function myFunction() {
+          document.getElementById("myForm").reset();
+      }
+    </script>
 
 
       <!-- ******************************END EVENT SECTION**************************************** -->

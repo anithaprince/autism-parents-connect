@@ -221,3 +221,12 @@ ul.flyout li a:hover, .nav-bar li ul li a:hover { background: #f34c31; color: #f
   background-color: #e6e6e6;
   padding: 1rem;
 }
+@media  (min-width: 768px) {
+  .small-banner > img{
+    height: 200px;
+    width: 100%;
+  }
+}
+th{
+  text-align:center !important;
+}

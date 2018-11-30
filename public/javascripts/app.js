@@ -11,7 +11,9 @@ app.controller('AutismCtrl', ['$http', function($http){
   this.image= "";
   this.posted_by= "";
   this.post_body= "";
-
+  this.event_title= "";
+  this.event_image= "";
+  this.event_details= "";
   /*********    Show route      ********/
   this.getBlogs = function(){
     $http({
@@ -65,6 +67,24 @@ app.controller('AutismCtrl', ['$http', function($http){
     });
   }
 
+  this.createEvent = function(){
+    $http({
+        method:'POST',
+        url: '/events',
+        data: {
+          event_title: this.event_title,
+          event_image: this.event_image,
+          event_details: this.event_details
+        }
+    }).then(function(response){
+        controller.event_title= "";
+        controller.event_image= "";
+        controller.event_details= "";
+        controller.getEvents();
+    }, function(){
+        console.log('error');
+    });
+  }
   /*********    Show blog route      ********/
   this.getBlog = function(blog){
     $http({
@@ -99,13 +119,22 @@ app.controller('AutismCtrl', ['$http', function($http){
 
     }).catch(angular.noop);
   }
-
+  /*********    Delete route      ********/
   this.deleteBlog = function(blog){
     $http({
       method:'DELETE',
       url:'/blogs/'+ blog._id
     }).then(function(response){
       controller.getBlogs();
+    })
+  }
+
+  this.deleteEvent = function(event){
+    $http({
+      method:'DELETE',
+      url:'/events/'+ event._id
+    }).then(function(response){
+      controller.getEvents();
     })
   }
 

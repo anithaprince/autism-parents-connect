@@ -16,10 +16,34 @@
 
 <body ng-controller="AutismCtrl as ctrl">
   <header ng-include="'partials/logo.html'"></header>
-    <div class="row page_wrap" style="margin-top:-2px">
+    <div class="row page_wrap container" style="margin-top:-2px">
       <div class="twelve columns">
         <!-- navigation -->
-        <div class="row" ng-include="'partials/navigation.html'"></div>
+        <!-- navigation -->
+        <div class="row">
+          <div class="twelve columns header_nav" style="margin-bottom:0; box-shadow: none">
+            <div class="twelve columns">
+              <ul id="menu-header" class="nav-bar horizontal">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Connect</a></li>
+                <li class="has-flyout">
+                  <a href="#">Shop</a><a href="#" class="flyout-toggle"></a>
+                  <ul class="flyout">
+                    <li class="has-flyout"><a href="products-page.html">Calming Toys & Products</a></li>
+                    <li class="has-flyout"><a href="products-page.html">Chewables - Oral Motor</a></li>
+                    <li class="has-flyout"><a href="products-page.html">Sleep Aids</a></li>
+                    <li class="has-flyout"><a href="products-page.html">Educational Toys </a></li>
+                  </ul>
+                </li>
+                <li class="active"><a href="galleries.html">View Events Gallery</a></li>
+                <li><a href="contact.html">Contact Page</a></li>
+              </ul>
+             <script type="text/javascript">
+               $('ul#menu-header').nav-bar();
+             </script>
+            </div>
+          </div>
+        </div><!-- END navigation -->
         <!-- END navigation -->
         <!-- ********************************************************************* -->
   		  <div id="container" ng-repeat="event in ctrl.events">
