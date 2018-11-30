@@ -82,15 +82,14 @@
           <h1 style="text-align: center;">Events</h1>
           <thead>
             <tr>
-              <th width="150">ID</th>
-              <th>Event Title</th>
-              <th width="200">Image</th>
-              <th width="150">Delete</th>
+              <th >Event Title</th>
+              <th >Image</th>
+              <th >Delete</th>
             </tr>
           </thead>
           <tbody ng-repeat="event in ctrl.events">
             <tr >
-              <td>{{ event._id}}</td>
+
               <td>{{ event.event_title }}</td>
               <td>{{ event.event_image }}</td>
               <td style="text-align:center;"><button ng-click="ctrl.deleteEvent(event)" class="button"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button></td>
