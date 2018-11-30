@@ -12,11 +12,46 @@
   </div>
 
   <div class="twelve columns">
-  <div class="blog_post"><!-- Begin Blog Post -->
-        <div class="heading_dots_grey  hide-for-smal"><h2 style="margin-bottom:2%; line-height:normal;"><span class="heading_bg"> {{ctrl.blog.heading}}</span></h2></div>
-         <p class="post_meta"><em>{{ctrl.blog.date | date:'MM/dd/yyyy @ h:mm:ssa'}} | Posted by: <a href="#">{{ctrl.blog.posted_by}}</a> | <a href="#comments">{{ctrl.blog.comments.length}} Comments</a></em></p>
-        <img src="{{ctrl.blog.image}}" alt="desc" style="width:80%; margin-left: 10%; margin-bottom: 25px" />
-        <p class="angular-with-newlines"> {{ctrl.blog.post_body}}</p>
-  </div><!-- END blog post -->
-  </div><!-- END row blog -->
+    <div class="blog_post"><!-- Begin Blog Post -->
+      <div class="heading_dots_grey  hide-for-smal"><h2 style="margin-bottom:2%; line-height:normal;"><span class="heading_bg"> {{ctrl.blog.heading}}</span></h2></div>
+      <p class="post_meta"><em>{{ctrl.blog.date | date:'MM/dd/yyyy @ h:mm:ssa'}} | Posted by: <a href="#">{{ctrl.blog.posted_by}}</a> | <a href="#comments">{{ctrl.blog.comments.length}} Comments</a></em></p>
+      <img src="{{ctrl.blog.image}}" alt="desc" style="width:80%; margin-left: 10%; margin-bottom: 25px" />
+      <p class="angular-with-newlines"> {{ctrl.blog.post_body}}</p>
+    </div><!-- END blog post -->
+
+<!-- comments box-->
+<div class="comment-section-container">
+  <h3>Comments ({{ctrl.blog.comments.length}})</h3>
+  <div ng-repeat="comment in ctrl.blog.comments">
+    <div class="comment-section-author">
+      <img src="images/person-icon.png" alt="">
+      <div class="comment-section-name">
+        <h5><a href="">Anonymous</a></h5>
+        <p>November 30, 2018 at 1:28pm</p>
+      </div>
+    </div>
+    <div class="comment-section-text">
+      <p>{{comment}}</p>
+    </div>
+  </div>
+</div>
+<!--End comments box-->
+
+<!-- comment form -->
+<form class="comment-section-form" ng-submit="ctrl.editBlog(ctrl.blog)">
+  <div class="comment-section-box">
+    <div class="row">
+      <div >
+        <h4>Leave a Comment</h4>
+        <label>Comment
+          <textarea rows="10" type="text" ng-model="ctrl.newComment"></textarea>
+        </label>
+        <button class="button expanded">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+<!--End comment form-->
+
+  </div>
 </div>

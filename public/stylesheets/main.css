@@ -244,3 +244,35 @@ ul.flyout li a:hover, .nav-bar li ul li a:hover { background: #f34c31; color: #f
     white-space: pre-wrap;
     padding: 5%;
 }
+
+/* comments*/
+.comment-section-container {
+  background-color: #fefefe;
+  padding: 1rem;
+}
+
+.comment-section-author {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.comment-section-author >img {
+  width: 50px;
+  height: 50px;
+}
+.comment-section-author .comment-section-name {
+  margin-left: 1rem;
+}
+
+.comment-section-author .comment-section-name p {
+  margin-bottom: 0;
+}
+
+.comment-section-box {
+  background-color: #e6e6e6;
+  padding: 1rem;
+}
