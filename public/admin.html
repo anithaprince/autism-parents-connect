@@ -48,6 +48,36 @@
       </div>
 
       <!-- ********************************************************************* -->
+
+      <!-- ********************************************************************* -->
+      <div class="row">
+        <div class="heading_dots hide-for-small" style="margin-bottom:0px">
+          <h1 class="heading_supersize"><span class="heading_center_bg">Events SECTION</span></h1>
+        </div>
+        <table>
+          <h1>Events</h1>
+          <thead>
+            <tr>
+              <th width="200">ID</th>
+              <th>Event Title</th>
+              <th width="150">Image</th>
+              <th width="150">Delete</th>
+            </tr>
+          </thead>
+          <tbody ng-repeat="event in ctrl.events">
+            <tr >
+              <td>{{ event._id}}</td>
+              <td>{{ event.title }}</td>
+              <td>{{ event.image }}</td>
+              <td><button ng-click="ctrl.deleteEvent(event)" class="button">X</button></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+
+      <!-- ********************************************************************* -->
+
       <div class="row footer" ng-include="'partials/footer.html'"> </div>
 
     </div>
